@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    div
+      h1.HeaderTag TOP NEWS HEADLINES RELATED TO THE COVID-19 PANDEMIC
+      each item in News
+        h2.TitleTag TITLE: #{item.title}
+        div
+          img.ImageTag(src= "#{item.urlToImage}", alt="Image not found") 
+          h3.DescriptionTag BRIEF DESCRIPTION: #{item.description}
+        h3
+          | Read the full description 
+          a(href="#{item.url}") HERE
+        hr.LineTag
+    div
+      h1.HeaderTag Covid related Info
+    div
+    table
+      thead
+        tr 
+          th Countries 
+          th Total Cases
+          th Deaths
+          th Recoveries
+        tbody
+          each country in Countries
+            tr
+              td.DescriptionTag #{country.country}
+              td.DescriptionTag #{country.cases}
+              td.DescriptionTag #{country.deaths}
+              td.DescriptionTag #{country.recovered}

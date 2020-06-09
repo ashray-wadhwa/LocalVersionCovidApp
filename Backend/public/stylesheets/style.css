@@ -1,0 +1,53 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* background:
+radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 5%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 5%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
+background-color: slategray;
+background-size:75px 100px; */
+background-image: linear-gradient(to right, lightgrey, rgb(87, 129, 143));
+}
+
+h3{
+  text-shadow: 0.5px 0.5px 0.5px black;
+}
+
+a {
+  color: darkblue;
+  text-shadow: 1px 1px 1px black;
+}
+
+.TitleTag{
+  color: rgb(74, 92, 42);
+  text-align: center;
+  text-shadow: 1px 1px 1px black;
+}
+
+.HeaderTag{
+  color: maroon;
+  text-align: center;
+  text-shadow: 3px 3px 3px black;
+}
+
+.UrlTag{
+  color: blue;
+}
+
+.ImageTag {
+  max-width:35%;
+  height:auto;
+  display: block;
+  /* margin-left: auto;
+  margin-right: auto; */
+  box-shadow: 8px 8px black;
+}
+
+.LineTag{
+  box-shadow: 3px 3px 3px black;
+}
+
+.DescriptionTag{
+  color: rgb(42, 65, 65);
+  text-align: left;
+}
