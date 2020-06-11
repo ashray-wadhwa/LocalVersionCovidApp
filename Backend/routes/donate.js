@@ -5,7 +5,10 @@ const myModel = require('./schema');
 
 const dbRoute =
     'mongodb+srv://dbUser:malloo4301@myCluster-puppf.mongodb.net/donationInfo?retryWrites=true&w=majority';//*
-mongoose.connect(dbRoute, { useNewUrlParser: true });//*
+mongoose.connect(process.env.MONGODB_URI || dbRoute, { 
+    useNewUrlParser: true 
+});//*
+
 let db = mongoose.connection;//*
 
 db.once('open', () => console.log('connected to the database'));//*
