@@ -26,8 +26,10 @@ a {
 
 .TitleTag{
   color: rgb(74, 92, 42);
-  text-align: center;
+  text-align: left;
   text-shadow: 1px 1px 1px black;
+  margin: 0 auto;
+  width: 60%;
 }
 
 .HeaderTag{

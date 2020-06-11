@@ -138,6 +138,22 @@ h2{
   opacity: 1;
 }
 
+a{
+  font-size: .75em;
+  margin: 0 auto;
+}
+a:hover{
+  font-size: 1em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+a:visited{
+  font-size: .75em;
+  margin: 0 auto;
+  text-align: center;
+}
+
 #coronaImage{
   max-width:26%;
   height:auto;
