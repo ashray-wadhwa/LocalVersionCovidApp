@@ -46,18 +46,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-
-
-//Serve static assets if in production
-if(process.env.NODE_ENV==='production'){
-  //set static folder
-  app.use(express.static('Frontend/build'));
-
-  app.get('*', (req, res) =>{
-    res.sendFile(path.resolve(__dirname, 'Frontend', 'build', 'index.html'));
-  });
-}
-
 module.exports = app;
 
 
