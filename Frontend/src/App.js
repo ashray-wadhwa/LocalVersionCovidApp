@@ -27,7 +27,7 @@ class Component_one extends React.Component {
 
  nextWindow(){
    window.location.replace(
-     "http://localhost:5000/news"
+     "http://0.0.0.0:5000/news"
    );
  }
 
