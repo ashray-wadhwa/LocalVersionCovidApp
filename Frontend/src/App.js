@@ -81,12 +81,13 @@ class Component_one extends React.Component {
   render() {
     return (
       <div className="component_one">
-        <img id="coronaImage" src= "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SARS-CoV-2_without_background.png/1193px-SARS-CoV-2_without_background.png" alt="Image not found"/>
+        <img id="coronaImage" src= "http://pngimg.com/uploads/stop_coronavirus/stop_coronavirus_PNG30.png" alt="Image not found"/>
         <h1 class = "donationTitle">Ways to Help During this Pandemic</h1>
         
         <h2>Major Organizations to Donate To</h2>
          <hr></hr>
         <div>
+        <h5 class = "userWarning">The Following Information Has Been Extracted From a Washington Post Article written by Kanyakrit Vongkiatkajorn and Laura Daily</h5>
           <table class = "myTable">
             <tr class = "tableHeaders">
               <th>Organization Name</th>
@@ -110,13 +111,20 @@ class Component_one extends React.Component {
             </tr>
             <tr>
               <td>Feeding America</td>
-              <td>With a nationwide network of 200 food banks and 60,000 food pantries, donations to its covid-19 response fund <br/> will help food banks across the country support the most vulnerable communities affected by the pandemic.</td>
+              <td>This organization has a nationwide network of 200 food banks and 60,000 food pantries. Donations to its covid-19 response fund will help food banks across the country support the most vulnerable communities affected by the pandemic.</td>
               <td><a href = "https://www.feedingamerica.org/">DONATE HERE</a></td>
             </tr>
             <tr>
               <td>No Kid Hungry</td>
-              <td>Deploys funds to ensure access to free meals continues for children in need, especially with schools closed. <br/>  It is providing $5 million in emergency grants immediately — with more to come — to help schools and community groups <br/> feed kids during the outbreak and making sure families know how to find meals while schools are closed.</td>
+              <td>This organization deploys funds to ensure that access to free meals continues for children in need, especially with schools closed.  
+                It is providing $5 million in emergency grants immediately — with more to come — to help schools and community groups feed kids during the outbreak and making sure families know how to find meals while schools are closed.</td>
               <td><a href = "https://secure.nokidhungry.org/site/Donation2?17586.donation=form1&df_id=17586&mfc_pref=T">DONATE HERE</a></td>
+            </tr>
+            <tr>
+              <td>American Red Cross</td>
+              <td>The cancellation of blood drives during this pandemic has resulted in the American Red Cross facing a severe blood shortage.
+              Healthy individuals are needed to donate now to maintain a sufficient supply.</td>
+              <td><a href = "https://www.redcrossblood.org/give.html/find-drive">DONATE HERE</a></td>
             </tr>
           </table>
   
@@ -178,8 +186,9 @@ class Component_one extends React.Component {
         {/* <br /> */}
 
         {/* <h5>PRESS THE BUTTON BELOW AFTER YOU HAVE ADDED AN ORGANIZATION OF CHOICE</h5>
-        { this.getData() }
-        <button onClick={() => { this.getData() }}>UPDATE!</button> */}
+        { this.getData() }*/}
+        {/* <button onClick={() => { this.getData() }}>GET!</button>  */}
+
         <button id = "button" onClick={() => {this.nextWindow()}}>Click for Covid Related News and Updates</button>
       </div>
     );

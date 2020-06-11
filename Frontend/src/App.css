@@ -132,14 +132,14 @@ h2{
 }
 
 #button:hover {
-  width: 140px;
+  width: 150px;
   height: 100px;
-  transition-timing-function: ease-in-out;
+  transition-timing-function: ease-out;
   opacity: 1;
 }
 
 #coronaImage{
-  max-width:20%;
+  max-width:26%;
   height:auto;
   display: block;
   /* margin-left: auto;
@@ -147,8 +147,9 @@ h2{
   /* box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.2), 0 25px 25px 0 rgba(0, 0, 0, 0.19); */
   margin: 0 auto;
   object-fit: contain;
-    /* box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19); */
-  background-image : none;
+  opacity: 0.85;
+  background-image: none;
+
 }
 
 #descriptionCol{
@@ -160,4 +161,8 @@ th{
   background-image: linear-gradient(to right, rgb(181, 181, 181), rgb(68, 102, 113));
   /* color: white; */
   font-weight: bold;
+}
+
+textarea{
+  background: lightgrey;
 }

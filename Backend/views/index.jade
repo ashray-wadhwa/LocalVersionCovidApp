@@ -4,8 +4,9 @@ block content
     <form  action="http://localhost:3000">
     <input id = "button" type="submit" value="Go Back to Donations" />
     </form>
-    img.coronaImage(src="http://pngimg.com/uploads/stop_coronavirus/stop_coronavirus_PNG30.png", alt="Image Not Found")
-    h1.HeaderTag COVID RELATED CASES, DEATHS, AND RECOVERIES 
+    img.coronaImage(src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SARS-CoV-2_without_background.png/1193px-SARS-CoV-2_without_background.png", alt="Image Not Found")
+    hr.LineTag
+    h1.HeaderTag COVID-19: CASES, DEATHS, AND RECOVERIES 
     table.covidTable
       thead
         tr 
@@ -36,14 +37,17 @@ block content
       h1.HeaderTag TOP NEWS HEADLINES RELATED TO THE COVID-19 PANDEMIC
       hr.LineTag
       each item in News
-        h2.TitleTag TITLE: #{item.title}
+        h2.TitleTag #{item.title}
+        <br/>
         div.imageDescBlock
           img.ImageTag(src= "#{item.urlToImage}", alt="Image not found") 
           <br/>
           h3.DescriptionTag BRIEF DESCRIPTION: #{item.description}
         div
-        h3
-          | Read the full description 
+        <br/>
+        div.DescriptionLink
+          h3
+          | Read the Full Article 
           a(href="#{item.url}") HERE
         hr.LineTag
     div

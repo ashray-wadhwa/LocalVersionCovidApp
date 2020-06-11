@@ -1,3 +1,4 @@
+
 *{
   scroll-behavior: smooth;
 }
@@ -10,7 +11,7 @@ radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 5%, rgba
 background-color: slategray;
 background-size:75px 100px; */
 background-image: linear-gradient(to right, lightgrey, rgb(87, 129, 143));
-border: 10px solid black;
+border: 6px solid black;
   opacity: 0.9;
 }
 
@@ -46,7 +47,7 @@ a {
   /* margin-left: auto;
   margin-right: auto; */
   box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.2), 0 25px 25px 0 rgba(0, 0, 0, 0.19);
-  /* margin: 0 auto; */
+  margin: 0 auto;
   border-radius: 10%;
   object-fit: contain;
 }
@@ -58,6 +59,8 @@ a {
 .DescriptionTag{
   color: rgb(42, 65, 65);
   text-align: left;
+  width: 60%;
+  margin: 0 auto;
 }
 table{
   padding-top: 80px;
@@ -117,7 +120,7 @@ th {
 }
 
 .coronaImage{
-  max-width:28%;
+  max-width:18%;
   height:auto;
   display: block;
   /* margin-left: auto;
@@ -125,4 +128,13 @@ th {
   /* box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.2), 0 25px 25px 0 rgba(0, 0, 0, 0.19); */
   margin: 0 auto;
   object-fit: contain;
+    /* box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19); */
+  background-image : none;
+}
+
+.DescriptionLink{
+  color: rgb(42, 65, 65);
+  text-align: center ;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-shadow: 1px 1px 1px black;
 }
