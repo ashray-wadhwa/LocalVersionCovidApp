@@ -39,8 +39,21 @@
 
 *{
   background-image: linear-gradient(to right, lightgrey, rgb(87, 129, 143));
+  /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SARS-CoV-2_without_background.png/1193px-SARS-CoV-2_without_background.png"); */
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(42, 65, 65);
+  text-shadow: 0.65px 0.65px 0.65px black;
+  scroll-behavior: smooth;
+  
 }
+  /* overflow-y: scroll;
+  scroll-snap-align: start;
+} */
 
+body{
+  border: 10px solid black;
+  opacity: 0.9;
+}
 .OrganizationName{
   text-align: left;
 }
@@ -51,4 +64,100 @@
 
 .OrgLinks{
   text-align: right;
+}
+
+.myTable{
+  /* color: darkslategrey; */
+  color: rgb(42, 65, 65);
+  text-shadow: 0.65px 0.65px 0.65px black;
+}
+
+.component_one{
+  margin: 30px;
+  /* background-color: #ffffff; */
+  /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SARS-CoV-2_without_background.png/1193px-SARS-CoV-2_without_background.png");  */
+  
+}
+
+.tableHeaders{
+  color: rgb(74, 92, 42);
+  text-align: center;
+  text-shadow: 1px 1px 1px black;
+  font-size: 18px;
+}
+
+h1{
+  color: maroon;
+  text-align: center;
+  text-shadow: 2px 2px 2px #2e2e2e;
+}
+
+h2{
+  color: rgb(74, 92, 42);
+  /* text-align: center; */
+  text-shadow: 1.5px 1.5px 1.5px black;
+}
+
+.LineTag{
+  box-shadow: 8px 3px 3px black;
+}
+
+.userWarning{
+  text-align: left;
+}
+
+.donationTitle{
+  text-align: center;
+}
+
+#button{
+    width: 115px;
+    height: 100px;
+    background-image: linear-gradient(to right, lightgrey, rgb(87, 129, 143));
+    color: maroon;
+    transition: width 2s, height 4s;
+    margin: 0;
+    position: absolute;
+    left: 92%;
+    top: 5%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    opacity: 0.6;
+    font: "Lucida Grande", Helvetica, Arial, sans-serif;
+    text-shadow: 0.65px 0.65px 0.65px black;
+  font-size: 0.9em;
+  padding: 2px 8px;
+  border-radius: 50%;
+  border: 2px solid maroon;
+}
+
+#button:hover {
+  width: 140px;
+  height: 100px;
+  transition-timing-function: ease-in-out;
+  opacity: 1;
+}
+
+#coronaImage{
+  max-width:20%;
+  height:auto;
+  display: block;
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.2), 0 25px 25px 0 rgba(0, 0, 0, 0.19); */
+  margin: 0 auto;
+  object-fit: contain;
+    /* box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19); */
+  background-image : none;
+}
+
+#descriptionCol{
+  width: 65%;
+  height: auto;
+}
+
+th{
+  background-image: linear-gradient(to right, rgb(181, 181, 181), rgb(68, 102, 113));
+  /* color: white; */
+  font-weight: bold;
 }

@@ -12,19 +12,56 @@ router.get('/', function(req, res, next) {
   
       var countries = [];
       let i = 0;
-      for (i = 0; i <= 10; i++){
+      for (i = 0; i < 20; i++){
         countries.push(response[i]);
       }
-      newsapi.v2.everything({
-        q: 'Covid',
+      newsapi.v2.topHeadlines({
+        // q: 'Covid' , 
+        q: 'coronavirus',
         language: 'en',
-        sortBy: 'relevancy'
+        country: 'us'
       }).then(response => {
             var news = [];
             for (var i of response.articles){
               news.push(i)
             } 
-              res.render('index', {Countries: countries, News: news});
+            newsapi.v2.topHeadlines({
+              // q: 'Covid' , 
+              q: 'covid',
+              language: 'en',
+              country: 'us'
+            }).then(response => {
+                  for (var i of response.articles){
+                    news.push(i)
+                  } 
+                  newsapi.v2.topHeadlines({
+                    // q: 'Covid' , 
+                    q: 'pandemic',
+                    language: 'en',
+                    country: 'us'
+                  }).then(response => {
+                        for (var i of response.articles){
+                          news.push(i)
+                        } 
+                        newsapi.v2.everything({
+                          q: 'Covid',
+                          language: 'en',
+                          sources:'abc-news',
+                          sortBy: 'relevancy',
+                          page: 1
+                        }).then(response => {
+                              for (var i of response.articles){
+                                if (i.description.includes("<") || i.description.includes("sport") || i.description.includes("sports")){
+                                  continue;
+                                } else {
+                                  news.push(i)
+                                }
+                              } 
+                              res.render('index', {Countries: countries, News: news});
+                            });
+                      });
+                });
+            
           });
     });  
   });

@@ -5,17 +5,6 @@ const myModel = require('./schema');
 
 
 
-const dbRoute =
-    'mongodb+srv://dbUser:malloo4301@myCluster-puppf.mongodb.net/donationInfo?retryWrites=true&w=majority';//*
-mongoose.connect(dbRoute, { useNewUrlParser: true });//*
-let db = mongoose.connection;//*
-
-db.once('open', () => console.log('connected to the database'));//*
-
-// checks if connection with the database is successful
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));//*
-
-
 router.get('/', function (req, res, next) {
     console.log("Entered get");
     myModel.find(function(err,data){
@@ -27,9 +16,6 @@ router.get('/', function (req, res, next) {
     });
     
 });
-
-
-
 
 router.post('/', function (req, res, next) {
     console.log("Entered post");
@@ -43,35 +29,36 @@ router.post('/', function (req, res, next) {
     });
 });
 
+
 //Delete Working and checking only for country
-router.delete('/', function (req, res, next) {
-    console.log("Entered delete");
-    myModel.findOneAndRemove({Organization: req.body.Organization}, (err)=>{
-    if (err) 
-        return res.json({ success: false, error: err });
-    else {
-        return res.json({ success: true });
-    }
-    })
- });
+// router.delete('/', function (req, res, next) {
+//     console.log("Entered delete");
+//     myModel.findOneAndRemove({Organization: req.body.Organization}, (err)=>{
+//     if (err) 
+//         return res.json({ success: false, error: err });
+//     else {
+//         return res.json({ success: true });
+//     }
+//     })
+//  });
 
- router.put('/', function (req, res, next){
-    console.log("Entered put");
-    let po = new myModel();
-    po.Organization = req.body.Organization;
-    po.Description = req.body.Description;
-    po.Links = req.body.Links;
+//  router.put('/', function (req, res, next){
+//     console.log("Entered put");
+//     let po = new myModel();
+//     po.Organization = req.body.Organization;
+//     po.Description = req.body.Description;
+//     po.Links = req.body.Links;
 
-    myModel.findOneAndRemove({Organization: req.body.Organization}, (err)=>{
-        if (err) 
-            return res.json({ success: false, error: err });
-        else {
-            po.save((err) => {
-                if (err) return res.json({ success: false, error: err });
-                return res.json({ success: true });
-            });
-        }
-        });
-});
+//     myModel.findOneAndRemove({Organization: req.body.Organization}, (err)=>{
+//         if (err) 
+//             return res.json({ success: false, error: err });
+//         else {
+//             po.save((err) => {
+//                 if (err) return res.json({ success: false, error: err });
+//                 return res.json({ success: true });
+//             });
+//         }
+//         });
+// });
 
 module.exports = router;

@@ -1,21 +1,12 @@
 extends layout
 
 block content
-    div
-      h1.HeaderTag TOP NEWS HEADLINES RELATED TO THE COVID-19 PANDEMIC
-      each item in News
-        h2.TitleTag TITLE: #{item.title}
-        div
-          img.ImageTag(src= "#{item.urlToImage}", alt="Image not found") 
-          h3.DescriptionTag BRIEF DESCRIPTION: #{item.description}
-        h3
-          | Read the full description 
-          a(href="#{item.url}") HERE
-        hr.LineTag
-    div
-      h1.HeaderTag Covid related Info
-    div
-    table
+    <form  action="http://localhost:3000">
+    <input id = "button" type="submit" value="Go Back to Donations" />
+    </form>
+    img.coronaImage(src="http://pngimg.com/uploads/stop_coronavirus/stop_coronavirus_PNG30.png", alt="Image Not Found")
+    h1.HeaderTag COVID RELATED CASES, DEATHS, AND RECOVERIES 
+    table.covidTable
       thead
         tr 
           th Countries 
@@ -25,7 +16,37 @@ block content
         tbody
           each country in Countries
             tr
-              td.DescriptionTag #{country.country}
-              td.DescriptionTag #{country.cases}
-              td.DescriptionTag #{country.deaths}
-              td.DescriptionTag #{country.recovered}
+              td #{country.country}
+              if (country.cases != "0")
+                td #{country.cases}
+              else
+                td N/A
+              if (country.deaths != "0")
+                td #{country.deaths}
+              else
+                td N/A
+              if (country.recovered != "0")
+                td #{country.recovered}
+              else
+                td N/A
+        hr.LineTag
+        
+    div
+      hr.LineTag
+      h1.HeaderTag TOP NEWS HEADLINES RELATED TO THE COVID-19 PANDEMIC
+      hr.LineTag
+      each item in News
+        h2.TitleTag TITLE: #{item.title}
+        div.imageDescBlock
+          img.ImageTag(src= "#{item.urlToImage}", alt="Image not found") 
+          <br/>
+          h3.DescriptionTag BRIEF DESCRIPTION: #{item.description}
+        div
+        h3
+          | Read the full description 
+          a(href="#{item.url}") HERE
+        hr.LineTag
+    div
+      
+    div
+
