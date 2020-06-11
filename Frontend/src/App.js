@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 
+    // "start": "concurrently \"cd Backend && npm start\" \"cd Frontend && npm start\"",
 
 class Component_one extends React.Component {
   constructor() {
