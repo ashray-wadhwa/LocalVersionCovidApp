@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
     // "start": "concurrently \"cd Backend && npm start\" \"cd Frontend && npm start\"",
+      // "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix Frontend && npm run build --prefix Frontend"
 
 class Component_one extends React.Component {
   constructor() {
