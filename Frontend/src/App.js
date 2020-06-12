@@ -29,7 +29,7 @@ class Component_one extends React.Component {
 
  nextWindow(){
    window.location.replace(
-     process.env.PORT + "/news"
+     "https://thecovidcentral.herokuapp.com/news"
    );
  }
 
