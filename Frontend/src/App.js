@@ -22,7 +22,7 @@ class Component_one extends React.Component {
 
 
   componentDidMount() {
-    fetch('/donate')
+    fetch('/')
       .then(res => res.json())
       .then((covid) => {this.setState({ covidinfo: covid.info }) });
   }
@@ -34,7 +34,7 @@ class Component_one extends React.Component {
  }
 
   getData() {
-    fetch('/donate')
+    fetch('/')
       .then(res => res.json())
       .then(covid =>  this.setState({ covidinfo: covid.info}));
   }
@@ -48,7 +48,7 @@ class Component_one extends React.Component {
       },
       body: JSON.stringify(data)
     }
-    fetch('/donate', options);
+    fetch('/', options);
   }
 
   // putData(){
