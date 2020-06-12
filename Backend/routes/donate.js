@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const myModel = require('./schema');
 
 const dbRoute =
-    'mongodb+srv://dbUser:malloo4301@myCluster-puppf.mongodb.net/donationInfo?retryWrites=true&w=majority';//*
+    '<DATABASE ROUTE HERE';//*
 mongoose.connect(process.env.MONGODB_URI || dbRoute, { 
     useNewUrlParser: true 
 });//*
