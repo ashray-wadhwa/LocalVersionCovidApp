@@ -29,7 +29,7 @@ class Component_one extends React.Component {
 
  nextWindow(){
    window.location.replace(
-     "http://0.0.0.0:5000/news"
+     "https://thecovidcentral.herokuapp.com/news"
    );
  }
 
