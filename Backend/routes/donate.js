@@ -3,11 +3,12 @@ var router = express.Router();
 const mongoose = require('mongoose');
 const myModel = require('./schema');
 
+
 const dbRoute =
     'mongodb+srv://dbUser:malloo4301@myCluster-puppf.mongodb.net/donationInfo?retryWrites=true&w=majority';//*
-mongoose.connect(process.env.MONGODB_URI || dbRoute, { 
-    useNewUrlParser: true 
-});//*
+mongoose.connect(dbRoute,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+    .then(() => console.log("Database Connected Successfully"))
+    .catch(err => console.log(err));
 
 let db = mongoose.connection;//*
 

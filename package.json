@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd Backend && npm start\" \"cd Frontend && npm start\""
+    "build": "cd Frontend && npm run build",
+    "install-client": "cd Frontend && npm install",
+    "start": "concurrently \"cd Backend && npm start\" \"cd Frontend && npm start\"",
+    "heroku-postbuild":"npm run install-client && npm run build "
+    
   },
   "keywords": [],
   "author": "",

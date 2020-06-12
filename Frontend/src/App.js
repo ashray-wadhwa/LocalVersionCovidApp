@@ -20,7 +20,7 @@ class Component_one extends React.Component {
     }
   }
 
-  // WOULD LIKE TO GET ONLY WHEN THE BUTTON IS PRESSED
+
   componentDidMount() {
     fetch('/donate')
       .then(res => res.json())
@@ -29,7 +29,7 @@ class Component_one extends React.Component {
 
  nextWindow(){
    window.location.replace(
-     "https://thecovidcentral.herokuapp.com/news"
+     process.env.PORT + "/news"
    );
  }
 
