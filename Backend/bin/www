@@ -7,36 +7,6 @@
 var app = require('../app');
 var debug = require('debug')('backend:server');
 var http = require('http');
-const path = require('path');
-var express = require('express');
-const mongoose = require('mongoose');
-
-//Serve static assets if in production
-if(process.env.NODE_ENV==='production'){
-  //set static folder
-  app.use(express.static('../../Frontend/build'));
-
-  app.get('*', (req, res) =>{
-    res.sendFile(path.resolve(__dirname, 'Frontend', 'build', 'index.html'));
-  });
-}
-
-
-
-const dbRoute =
-    'mongodb+srv://dbUser:malloo4301@myCluster-puppf.mongodb.net/donationInfo?retryWrites=true&w=majority';//*
-mongoose.connect(dbRoute,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
-    .then(() => console.log("Database Connected Successfully"))
-    .catch(err => console.log(err));
-let db = mongoose.connection;//*
-
-db.once('open', () => console.log('connected to the database'));//*
-
-// checks if connection with the database is successful
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));//*
-
-
-
 
 /**
  * Get port from environment and store in Express.

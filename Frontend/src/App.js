@@ -1,9 +1,6 @@
 import React from 'react';
 import './App.css';
 
-    // "start": "concurrently \"cd Backend && npm start\" \"cd Frontend && npm start\"",
-      // "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix Frontend && npm run build --prefix Frontend"
-
 class Component_one extends React.Component {
   constructor() {
     super();
@@ -22,19 +19,19 @@ class Component_one extends React.Component {
 
 
   componentDidMount() {
-    fetch('/')
+    fetch('/donate')
       .then(res => res.json())
       .then((covid) => {this.setState({ covidinfo: covid.info }) });
   }
 
  nextWindow(){
    window.location.replace(
-     "https://thecovidcentral.herokuapp.com/news"
+     "http://localhost:5000/news"
    );
  }
 
   getData() {
-    fetch('/')
+    fetch('/donate')
       .then(res => res.json())
       .then(covid =>  this.setState({ covidinfo: covid.info}));
   }
@@ -48,7 +45,7 @@ class Component_one extends React.Component {
       },
       body: JSON.stringify(data)
     }
-    fetch('/', options);
+    fetch('/donate', options);
   }
 
   // putData(){
