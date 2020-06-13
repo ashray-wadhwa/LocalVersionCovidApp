@@ -5,7 +5,7 @@ const myModel = require('./schema');
 
 
 const dbRoute =
-    '<ENTER DATABASE ROUTE HERE'>'';//*
+    'mongodb+srv://dbUser:malloo4301@myCluster-puppf.mongodb.net/donationInfo?retryWrites=true&w=majority';//*
 mongoose.connect(dbRoute,{ useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log("Database Connected Successfully"))
     .catch(err => console.log(err));

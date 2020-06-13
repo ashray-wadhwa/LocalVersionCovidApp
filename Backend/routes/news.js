@@ -9,7 +9,6 @@ Covidapi.settings({
 
 router.get('/', function(req, res, next) {
     Covidapi.countries({sort:'cases'}).then(response => {
-  
       var countries = [];
       let i = 0;
       for (i = 0; i < 20; i++){
@@ -21,9 +20,13 @@ router.get('/', function(req, res, next) {
         language: 'en',
         country: 'us'
       }).then(response => {
+        var newsMap = new Map();
             var news = [];
             for (var i of response.articles){
-              news.push(i)
+              if(!(newsMap.has(i.title))){
+                newsMap.set(i.title, i);
+                news.push(i)
+              }
             } 
             newsapi.v2.topHeadlines({
               // q: 'Covid' , 
@@ -32,7 +35,10 @@ router.get('/', function(req, res, next) {
               country: 'us'
             }).then(response => {
                   for (var i of response.articles){
-                    news.push(i)
+                    if(!(newsMap.has(i.title))){
+                      newsMap.set(i.title, i);
+                      news.push(i)
+                    }
                   } 
                   newsapi.v2.topHeadlines({
                     // q: 'Covid' , 
@@ -41,7 +47,10 @@ router.get('/', function(req, res, next) {
                     country: 'us'
                   }).then(response => {
                         for (var i of response.articles){
-                          news.push(i)
+                          if(!(newsMap.has(i.title))){
+                            newsMap.set(i.title, i);
+                            news.push(i)
+                          }
                         } 
                         newsapi.v2.everything({
                           q: 'Covid',
@@ -54,7 +63,10 @@ router.get('/', function(req, res, next) {
                                 if (i.description.includes("<") || i.description.includes("sport") || i.description.includes("sports")){
                                   continue;
                                 } else {
-                                  news.push(i)
+                                  if(!(newsMap.has(i.title))){
+                                    newsMap.set(i.title, i);
+                                    news.push(i)
+                                  }
                                 }
                               } 
                               res.render('index', {Countries: countries, News: news});
