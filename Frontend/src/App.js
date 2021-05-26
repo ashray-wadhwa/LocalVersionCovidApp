@@ -147,7 +147,6 @@ class Component_one extends React.Component {
               <td>{corona_stats.Organization}</td>
               <td>{corona_stats.Description}</td>
               <td><a href = {corona_stats.Links}>DONATE HERE</a></td>
-            
           </tr>)}
         </table>
         <br/>
